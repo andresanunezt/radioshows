@@ -4,7 +4,8 @@ class CreateShows < ActiveRecord::Migration[5.2]
       t.string :name
       t.datetime :time
       t.integer :radio_station_id
-      t.integer :dj_id
+      t.integer :host
+      t.string :show_type
     end
   end
 end
