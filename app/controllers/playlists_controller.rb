@@ -45,9 +45,15 @@ get '/playlists/:id/edit' do
     end
 end
 
-patch '/playlist/:id' do
-    
-
+patch '/playlists/:id' do
+    playlist = Playlist.find_by(id: params[:id])
+    params.delete("_method")
+    playlist.update(params)
+    if playlist.update(params)
+        redirect "/playlists/#{playlist.id}"
+    else
+        redirect '/playlists/:id/edit'
+    end
 end
 
 

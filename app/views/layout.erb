@@ -21,6 +21,9 @@
       <footer class="branding">
       <% if logged_in? %>
       <a href="/logout">Log out</a>
+      <% else %>
+      <a href="/signup">Signup</a><br>
+      <a href="/login">Login</a>
       <% end %>
         <small>&copy; 2021 <strong>Radioshows</strong></small>
       </footer>
