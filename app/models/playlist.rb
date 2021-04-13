@@ -1,6 +1,7 @@
 class Playlist < ActiveRecord::Base
-    belongs_to :djs
+    belongs_to :dj
     
+    validates :title, :content, presence: true
 
     
     end
