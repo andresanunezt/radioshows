@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 2021_04_13_023155) do
     t.string "title"
     t.integer "dj_id"
     t.text "content"
-    t.string "host"
     t.string "genre"
     t.string "air_time"
   end

@@ -19,8 +19,7 @@ end
     dj: Dj.all.sample,
     genre: Faker::Music.genre,
     content: Faker::Quotes::Shakespeare.romeo_and_juliet_quote,
-    air_time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :long),
-    host: "Sample DJ NAME")
+    air_time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :long))
     
 
     
