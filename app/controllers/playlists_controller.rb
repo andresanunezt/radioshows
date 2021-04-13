@@ -32,6 +32,25 @@ get '/playlists/:id' do
 end
 
 
+get '/playlists/:id/edit' do
+    if logged_in?
+        @playlist = Playlist.find_by(id: params[:id] )
+            if @playlist.dj_id != current_dj.id || @playlist.dj_id == nil
+                redirect '/playlists'
+            else
+                erb :'playlists/edit'
+            end  
+    else
+        redirect '/login'
+    end
+end
+
+patch '/playlist/:id' do
+    
+
+end
+
+
 
 
 
