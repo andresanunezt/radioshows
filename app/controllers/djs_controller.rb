@@ -1,9 +1,17 @@
 class DjsController < ApplicationController
 
+get '/djs' do
+    @djs = Dj.all
+
+    erb :'djs/index'
+end
+
+
+
 
 get '/signup' do
 
-    erb: signup
+    erb :'djs/signup'
 end
 
 end
