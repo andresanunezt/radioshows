@@ -6,3 +6,4 @@ end
 
 use SessionsController
 run ApplicationController
+use DjsController
