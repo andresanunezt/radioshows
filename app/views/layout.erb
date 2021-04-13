@@ -19,6 +19,9 @@
         <%= yield %>
 
       <footer class="branding">
+      <% if logged_in? %>
+      <a href="/logout">Log out</a>
+      <% end %>
         <small>&copy; 2021 <strong>Radioshows</strong></small>
       </footer>
     </div>
