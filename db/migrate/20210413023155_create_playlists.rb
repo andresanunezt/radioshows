@@ -6,7 +6,7 @@ class CreatePlaylists < ActiveRecord::Migration[5.2]
       t.text :content
       t.string :show_type
       t.string :genre
-
+      t.datetime :air_time
       t.timestamp
     end
   end
