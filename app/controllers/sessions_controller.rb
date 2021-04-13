@@ -3,8 +3,11 @@ class SessionsController < ApplicationController
 
 
 get '/login' do
-
+    if logged_in?
+        redirect '/playlists'
+    else
     erb :'sessions/login'
+    end
 end
 
 
@@ -19,7 +22,6 @@ post '/login' do
     end
 
 end
-
 
 
 get '/logout' do

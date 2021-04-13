@@ -13,13 +13,14 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
+  helpers do
+    def logged_in?
+      session[:user_id]
+    end
 
-  def logged_in?
-    session[:user_id]
-  end
-
-  def current_dj
-    @dj ||= User.find_by(id: session[:user_id])
+    def current_dj
+      @dj ||= Dj.find_by(id: session[:user_id])
+    end
   end
 
 end

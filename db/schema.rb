@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2021_04_13_023155) do
     t.text "content"
     t.string "show_type"
     t.string "genre"
-    t.datetime "air_time"
+    t.string "air_time"
   end
 
 end
