@@ -5,3 +5,12 @@
 
 
  <a href="/playlists/<%= @playlist.id %>/edit" > EDIT </a>
+
+<br>
+ <a href="/playlists"> Back to playlists </a>
+ 
+ 
+  <form method="POST" action="/playlists/<%= @playlist.id %>">
+            <input type="hidden" id="hidden" name="_method" value="DELETE">
+            <input type="submit" value="DELETE">
+ </form>

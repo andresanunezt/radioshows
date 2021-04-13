@@ -58,6 +58,19 @@ end
 
 
 
+delete '/playlists/:id' do
+    if logged_in?
+       playlist = Playlist.find_by(id: params[:id])
+       if playlist.dj_id != current_dj.id || playlist.dj_id == nil
+        redirect "/playlists/#{playlist.id}"
+       else
+        playlist.destroy
+        redirect '/playlists'
+       end
+    end
+
+
+end
 
 
 end
