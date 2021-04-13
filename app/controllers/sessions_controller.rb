@@ -16,7 +16,7 @@ post '/login' do
     dj = Dj.find_by(username: params[:username])
     if dj && dj.authenticate(params[:password])
         session[:user_id] = dj.id
-        redirect '/djs'
+        redirect '/playlists'
     else
         redirect '/login'
     end

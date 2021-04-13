@@ -3,7 +3,10 @@
 <ul>
 <% @playlists.each do | playlist |%>
 <li>
-<%= playlist.title%>
+
+<a href="/playlists/<%= playlist.id %>" >
+                <%= playlist.title%>
+            </a>
 
 </li>
 
@@ -11,3 +14,7 @@
 
 
 </ul>
+
+<br>
+<br>
+<a href='/playlists/new'> Create a new playlist</a>
