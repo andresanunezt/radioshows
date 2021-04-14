@@ -3,7 +3,9 @@
 <ul>
 <% @djs.each do | dj |%>
 <li>
-<%= dj.dj_name%>
+<a href="/djs/<%= dj.id %>" >
+<%= dj.dj_name%> 
+</a>
 
 </li>
 

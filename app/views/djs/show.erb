@@ -1,0 +1,20 @@
+<h1><%= @dj.dj_name %></h1>
+
+
+
+<ul>
+<% @playlists.each do | playlist| %>
+<li>
+<a href="/playlists/<%=playlist[:id]%>">
+<%= playlist[:title]%>
+</a>
+<% end %>
+
+</li>
+</ul>
+<br>
+<br>
+ <a href="/playlists"> Back to playlists </a>
+ <br>
+ <br>
+ 

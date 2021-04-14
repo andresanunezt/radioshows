@@ -28,4 +28,12 @@ post '/djs' do
 
 end
 
+
+get '/djs/:id' do
+    @dj = Dj.find_by(id: params[:id] )
+    @playlists = Dj.find_by(id: params[:id]).playlists
+    erb :'djs/show'
+
+end
+
 end
