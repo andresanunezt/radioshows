@@ -39,18 +39,19 @@ end
 
 
 get '/djs/:id/edit' do
-    if logged_in?
+    if logged_in? 
         @dj = Dj.find_by(id: params[:id] )
-        if @dj.id != current_dj.id || @dj.id == nil
-            redirect '/playlists'
-         else
-            erb :'djs/edit'
-        end  
+            if @dj.id != current_dj.id || @dj.id == nil
+                redirect '/djs'
+            else
+                erb :'djs/edit'
+            end  
     else
         redirect '/login'
     end
-
 end
+
+
 
 
 
