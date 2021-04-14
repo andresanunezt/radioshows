@@ -5,18 +5,21 @@
 <p><%= @playlist.content %></p>
 
 
- <a href="/playlists/<%= @playlist.id %>/edit" > EDIT </a>
+
 
 <br>
 <br>
  <a href="/playlists"> Back to playlists </a>
  <br>
  <br>
- 
+ <% if logged_in? && @playlist.dj_id == current_dj.id %>
   <form method="POST" action="/playlists/<%= @playlist.id %>">
             <input type="hidden" id="hidden" name="_method" value="DELETE">
             <input type="submit" value="DELETE">
  </form>
+ <br>
+ <a href="/playlists/<%= @playlist.id %>/edit" > EDIT </a>
+ <%end %>
 
  <br>
  <a href="/"> Home </a>
