@@ -19,7 +19,7 @@ class ApplicationController < Sinatra::Base
     end
 
     def current_dj
-      @dj ||= Dj.find_by(id: session[:user_id])
+      @logged_in_dj ||= Dj.find_by(id: session[:user_id])
     end
   end
 

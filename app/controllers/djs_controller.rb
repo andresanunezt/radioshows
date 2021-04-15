@@ -51,6 +51,33 @@ get '/djs/:id/edit' do
     end
 end
 
+patch '/djs/:id' do
+    dj = Dj.find_by(id: params[:id])
+    params.delete("_method")
+    dj.update(params)
+    if dj.update(params)
+        redirect "/dj/#{dj.id}"
+    else
+        redirect '/dj/:id/edit'
+    end
+end
+
+
+delete '/djs/:id' do
+    if logged_in?
+    dj = Dj.find_by(id: params[:id])
+    if dj.id != current_dj.id || dj.id == nil
+        redirect "/djs/#{dj.id}"
+       else
+        session.clear
+        dj.destroy
+        dj.playlists.destroy
+        
+        redirect '/'
+       end
+    end
+end
+
 
 
 
