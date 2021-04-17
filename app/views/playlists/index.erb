@@ -1,12 +1,12 @@
-<h1>All Playlists </h1>
+<h1>ALL PLAYLISTS </h1>
 
 <ul>
 <% @playlists.each do | playlist |%>
 <li>
 
-<a href="/playlists/<%= playlist.id %>" >
+<p><a href="/playlists/<%= playlist.id %>" >
                 <%= playlist.title%>
-            </a>
+            </a></p>
 
 </li>
 
@@ -17,12 +17,13 @@
 
 <br>
 <br>
-<a href="/djs"> View All Djs </a>
+<a href="/djs"> all Djs </a>
 <br>
-<a href="/"> Home </a>
+<a href="/"> home </a>
 <br>
 <%if logged_in?%>
-<a href='/playlists/new'> Create a new playlist</a>
+<br>
+<a href='/playlists/new'> create a new playlist</a>
 <br>
 
 

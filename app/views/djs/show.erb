@@ -5,9 +5,9 @@
 <ul>
 <% @playlists.each do | playlist| %>
 <li>
-<a href="/playlists/<%=playlist[:id]%>">
+<p><a href="/playlists/<%=playlist[:id]%>">
 <%= playlist[:title]%>
-</a>
+</a></p>
 <% end %>
 <br>
 <br>
@@ -15,11 +15,11 @@
 </li>
 <br>
 <br>
- <a href="/playlists"> Playlists </a>
+ <a href="/playlists"> playlists </a>
  <br>
- <a href="/djs"> Back to djs </a>
+ <a href="/djs"> back to djs </a>
  <br>
- <a href="/"> Home </a>
+ <a href="/"> home </a>
 
  
 

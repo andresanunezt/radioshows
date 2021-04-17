@@ -20,10 +20,11 @@
 
       <footer class="branding">
       <% if logged_in? %>
-      <h4> Welcome, <%= current_dj.dj_name%> </h4>
+      <strong> Welcome, <a href="/djs/<%= current_dj.id%>"><%= current_dj.dj_name%> </a></strong>
+      <br>
       <a href="/logout">Log out</a>
       <br>
-      <a href="/djs/<%= current_dj.id%>/edit"> Edit DJ Profile </a>
+      <a href="/djs/<%= current_dj.id%>/profile">  DJ Profile </a>
       <% else %>
       <a href="/signup">Signup</a><br>
       <a href="/login">Login</a>

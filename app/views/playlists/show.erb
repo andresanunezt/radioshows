@@ -9,7 +9,7 @@
 
 <br>
 <br>
- <a href="/playlists"> Back to playlists </a>
+ <a href="/playlists"> back to playlists </a>
  <br>
  <br>
  <% if logged_in? && @playlist.dj_id == current_dj.id %>
@@ -18,8 +18,8 @@
             <input type="submit" value="DELETE">
  </form>
  <br>
- <a href="/playlists/<%= @playlist.id %>/edit" > EDIT </a>
+ <a href="/playlists/<%= @playlist.id %>/edit" > edit </a>
  <%end %>
 
  <br>
- <a href="/"> Home </a>
+ <a href="/"> home </a>

@@ -38,13 +38,13 @@ get '/djs/:id' do
 end
 
 
-get '/djs/:id/edit' do
+get '/djs/:id/profile' do
     if logged_in? 
         @dj = Dj.find_by(id: params[:id])
             if @dj.id != current_dj.id || @dj.id == nil
                 redirect '/djs'
             else
-                erb :'djs/edit'
+                erb :'djs/dj_profile'
             end  
     else
         redirect '/login'
@@ -54,7 +54,7 @@ end
 patch '/djs/:id' do
     dj = Dj.find_by(id: params[:id])
     params.delete("_method")
-    dj.update(params)
+    dj.update(name: params[:name], dj_name: params[:dj_name],username: params[:username] )
     if dj.update(params)
         redirect "/dj/#{dj.id}"
     else
@@ -63,20 +63,6 @@ patch '/djs/:id' do
 end
 
 
-delete '/djs/:id' do
-    if logged_in?
-    dj = Dj.find_by(id: params[:id])
-    if dj.id != current_dj.id || dj.id == nil
-        redirect "/djs/#{dj.id}"
-       else
-        session.clear
-        dj.destroy
-        dj.playlists.destroy
-        
-        redirect '/'
-       end
-    end
-end
 
 
 
