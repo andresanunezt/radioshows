@@ -37,6 +37,7 @@ get '/playlists/:id/edit' do
     if logged_in?
         @playlist = Playlist.find_by(id: params[:id] )
             if @playlist.dj_id != current_dj.id || @playlist.dj_id == nil
+                flash[:alert] = "YOU DO NOT HAVE ACCESS TO THIS PAGE"
                 redirect '/playlists'
             else
                 erb :'playlists/edit'

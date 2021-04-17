@@ -13,6 +13,7 @@ gem 'bcrypt'
 gem 'tux'
 gem 'faker'
 gem 'sinatra-flash'
+gem 'dotenv'
 
 group :test do
   gem 'rspec'
