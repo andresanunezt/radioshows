@@ -18,6 +18,7 @@ post '/login' do
         session[:user_id] = dj.id
         redirect '/playlists'
     else
+        # flash[:notice] = "INCORRECT INFORMATION. PLEASE TRY AGAIN"
         redirect '/login'
     end
 
