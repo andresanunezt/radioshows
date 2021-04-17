@@ -22,7 +22,7 @@ post '/djs' do
         redirect '/djs'
         
     else
-        
+       flash[:alert] = "INVALID INFORMATION.TRY AGAIN PLEASE." 
     erb :"djs/signup"
     end
 
@@ -42,12 +42,15 @@ get '/djs/:id/profile' do
     if logged_in? 
         @dj = Dj.find_by(id: params[:id])
             if @dj.id != current_dj.id || @dj.id == nil
+                flash[:alert] = "YOU DO NOT HAVE ACCESS TO THIS PAGE!"
                 redirect '/djs'
             else
                 erb :'djs/dj_profile'
             end  
     else
+        flash[:alert] = "YOU HAVE TO BE LOGGED IN TO VIEW THIS PAGE!"
         redirect '/login'
+        
     end
 end
 
