@@ -20,7 +20,7 @@ post '/playlists' do
     if playlist.save
         redirect '/playlists'
     else
-        flash[:alert] = "INVALID INFORMATION OR FORMAT.PLEASE TRY AGAIN." 
+        flash[:alert] = "INVALID INFORMATION. PLEASE TRY AGAIN." 
         redirect 'playlists/new'
     end
 end
@@ -53,8 +53,8 @@ patch '/playlists/:id' do
     if playlist.update(params)
         redirect "/playlists/#{playlist.id}"
     else
-        
-        redirect '/playlists/:id/edit'
+        flash[:alert] = "UNABLE TO EDIT. PLEASE TRY AGAIN."
+        redirect "/playlists/#{playlist.id}"
     end
 end
 
