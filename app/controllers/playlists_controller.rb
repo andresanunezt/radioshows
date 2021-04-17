@@ -43,6 +43,7 @@ get '/playlists/:id/edit' do
                 erb :'playlists/edit'
             end  
     else
+        flash[:alert] = "YOU MUST BE LOGGED IN TO EDIT"
         redirect '/login'
     end
 end
