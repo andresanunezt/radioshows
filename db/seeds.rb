@@ -2,7 +2,8 @@ Dj.destroy_all
 Playlist.destroy_all
 
  
-title = ["Coastal Drift Tuesday 34", "The Garden", "The Factory", "The Velvet Hour", "Neon.wav", "Night Wavves","My Finest Hour"]
+title = ["Coastal Drift- 6-7pm, June 5,2018", "Night Wavves — 6pm to 7pm, October 1, 2019", "Neon.wav, 7-8pm, February 16, 2018", "The Factory — 8 to 9pm, October 25, 2016","My Finest Hour: Finale — 3 to 4pm, December 12, 2016
+    "]
 
 5.times do 
     Dj.create(name: Faker::Name.name   , 
@@ -12,6 +13,8 @@ title = ["Coastal Drift Tuesday 34", "The Garden", "The Factory", "The Velvet Ho
     
         
 end
+
+Dj.create(name: "William", username:"3in1bodywash",dj_name: "3in1bodywash",password: "password")
 
 10.times do
 
