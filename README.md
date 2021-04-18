@@ -5,7 +5,8 @@ Welcome to the webapplication of Red Triangle Radio, a fictional radio station. 
 ## Motivation
 As part of the staff in college radio, the upload of a dj's weekly playlist was a complicated, multi-step process. That inspired me to attempt to create a simple webapp where dj's can upload their own playlists and have them up for display.
 ## Installation
-Simply run `bundle install`.
+Simply clone this repo and run `bundle install`.
+Run `rake db:migrate`.
 Once all the appropriate gems are installed accessing the webpp can be done through `shotgun` or any other local server.
 
 ## Usage
