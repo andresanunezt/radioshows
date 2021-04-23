@@ -54,16 +54,7 @@ get '/djs/:id/profile' do
     end
 end
 
-patch '/djs/:id' do
-    dj = Dj.find_by(id: params[:id])
-    params.delete("_method")
-    dj.update(name: params[:name], dj_name: params[:dj_name],username: params[:username] )
-    if dj.update(params)
-        redirect "/dj/#{dj.id}"
-    else
-        redirect '/dj/:id/edit'
-    end
-end
+
 
 
 
